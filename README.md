@@ -36,7 +36,7 @@
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/tu_usuario/roadtripfoodies.git
+   git clone https://github.com/mateorubio/mr-econ-python.git
    cd roadtripfoodies
 
 2. Crear y activar un entorno virtual:
