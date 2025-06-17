@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>RoadTripFoodies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>🌍 RoadTripFoodies 🍲</h1>
-        <nav>
-            <a href="{% url 'home' %}">Inicio</a> |
-            <a href="{% url 'nueva_receta' %}">Agregar Receta</a> |
-            <a href="{% url 'nueva_autor' %}">Agregar Autor</a> |
-            <a href="{% url 'nuevo_destino' %}">Agregar Destino</a>
-        </nav>
-        <hr>
-    </header>
+<body class="bg-light">
 
-    {% block content %}
-    {% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">🌍 RoadTripFoodies</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'nueva_receta' %}">Nueva Receta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'nueva_autor' %}">Nuevo Autor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'nuevo_destino' %}">Nuevo Destino</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <footer>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="text-center mt-5 text-muted">
         <hr>
-        <p>RoadTripFoodies © 2025</p>
+        <p>&copy; 2025 RoadTripFoodies</p>
     </footer>
+
 </body>
 </html>
