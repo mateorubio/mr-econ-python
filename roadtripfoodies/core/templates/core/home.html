@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <h2>Recetas del mundo</h2>
+    <ul>
+        {% for receta in recetas %}
+            <li>
+                <strong>{{ receta.titulo }}</strong> — {{ receta.destino.nombre }} ({{ receta.autor.nombre }})
+            </li>
+        {% empty %}
+            <li>No hay recetas aún.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
