@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db import models
 from .models import Receta, Autor, Destino
 from .forms import RecetaForm, AutorForm, DestinoForm
 
