@@ -1,3 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Receta, Autor, Destino
+from .forms import RecetaForm, AutorForm, DestinoForm
 
-# Create your views here.
+def home(request):
+    recetas = Receta.objects.all()
+    return render(request, 'core/home.html', {'recetas': recetas})
+
+def nueva_receta(request):
+    if request.method == 'POST':
+        form = RecetaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = RecetaForm()
+    return render(request, 'core/receta_form.html', {'form': form})
+
+def nueva_autor(request):
+    if request.method == 'POST':
+        form = AutorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AutorForm()
+    return render(request, 'core/autor_form.html', {'form': form})
+
+def nuevo_destino(request):
+    if request.method == 'POST':
+        form = DestinoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = DestinoForm()
+    return render(request, 'core/destino_form.html', {'form': form})
