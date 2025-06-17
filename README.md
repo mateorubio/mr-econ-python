@@ -1,4 +1,4 @@
-# RoadTripFoodies
+# RoadTripFoodies (Tercera Entrega Mateo Luis Rubio)
 
 **RoadTripFoodies** es un blog que combina recetas y viajes, permitiendo registrar platos típicos asociados a destinos turísticos, junto con sus autores. Este proyecto fue desarrollado en Django para la 3era entrega de la comisión 69560 del curso de Python de la plataforma CoderHouse.
 
