@@ -1,0 +1,9 @@
+def nueva_autor(request):
+    if request.method == 'POST':
+        form = AutorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AutorForm()
+    return render(request, 'core/autor_form.html', {'form': form})
