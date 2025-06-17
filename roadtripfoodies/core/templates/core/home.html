@@ -1,6 +1,12 @@
 {% extends "core/base.html" %}
 
 {% block content %}
+    <h2>Buscar Recetas</h2>
+    <form method="get">
+        <input type="text" name="q" placeholder="Buscar por título o destino...">
+        <button type="submit">Buscar</button>
+    </form>
+
     <h2>Recetas del mundo</h2>
     <ul>
         {% for receta in recetas %}
@@ -8,7 +14,7 @@
                 <strong>{{ receta.titulo }}</strong> — {{ receta.destino.nombre }} ({{ receta.autor.nombre }})
             </li>
         {% empty %}
-            <li>No hay recetas aún.</li>
+            <li>No hay recetas.</li>
         {% endfor %}
     </ul>
 {% endblock %}

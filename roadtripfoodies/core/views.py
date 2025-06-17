@@ -3,7 +3,14 @@ from .models import Receta, Autor, Destino
 from .forms import RecetaForm, AutorForm, DestinoForm
 
 def home(request):
-    recetas = Receta.objects.all()
+    query = request.GET.get('q')
+    if query:
+        recetas = Receta.objects.filter(
+            models.Q(titulo__icontains=query) |
+            models.Q(destino__nombre__icontains=query)
+        )
+    else:
+        recetas = Receta.objects.all()
     return render(request, 'core/home.html', {'recetas': recetas})
 
 def nueva_receta(request):
