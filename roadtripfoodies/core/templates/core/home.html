@@ -14,7 +14,12 @@
             <a href="{% url 'detalle_receta' receta.id %}">
                 <strong>{{ receta.titulo }}</strong>
             </a>
-            — {{ receta.destino.nombre }} ({{ receta.autor.nombre }})
+            — <a href="{% url 'detalle_destino' receta.destino.id %}">{{ receta.destino.nombre }}</a>
+(<a href="{% url 'detalle_autor' receta.autor.id %}">{{ receta.autor.nombre }}</a>)
+            <p>{{ receta.descripcion|truncatewords:20 }}</p>
+            <p><strong>Ingredientes:</strong> {{ receta.ingredientes|truncatewords:10 }}</p>
+            <p><strong>Pasos:</strong> {{ receta.pasos|truncatewords:10 }}</p>
+            <p><small>Publicado el {{ receta.fecha_publicacion|date:"d M Y" }}</small></p>
         </li>
     {% empty %}
         <li>No hay recetas aún.</li>

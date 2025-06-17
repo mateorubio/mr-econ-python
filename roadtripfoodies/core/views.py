@@ -47,3 +47,11 @@ def nuevo_destino(request):
 def detalle_receta(request, receta_id):
     receta = Receta.objects.get(id=receta_id)
     return render(request, 'core/receta_detalle.html', {'receta': receta})
+
+def detalle_destino(request, destino_id):
+    destino = Destino.objects.get(id=destino_id)
+    return render(request, 'core/destino_detalle.html', {'destino': destino})
+
+def detalle_autor(request, autor_id):
+    autor = Autor.objects.get(id=autor_id)
+    return render(request, 'core/autor_detalle.html', {'autor': autor})

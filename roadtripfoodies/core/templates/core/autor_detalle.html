@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <div class="card p-4 shadow-sm">
+        <h2>{{ autor.nombre }}</h2>
+        <p><strong>Email:</strong> {{ autor.email }}</p>
+        <p><strong>Biografía:</strong></p>
+        <p>{{ autor.bio }}</p>
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Volver</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <div class="card p-4 shadow-sm">
+        <h2>{{ destino.nombre }}</h2>
+        <p><strong>País:</strong> {{ destino.pais }}</p>
+        <p><strong>Descripción:</strong></p>
+        <p>{{ destino.descripcion }}</p>
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Volver</a>
+    </div>
+{% endblock %}
