@@ -46,18 +46,28 @@
    source env/bin/activate        # En Windows: env\Scripts\activate
 
 3. Instalar las dependencias necesarias:
+
+   ```bash
     pip install django
 
 4. Aplicar las migraciones iniciales:
+
+    ```bash
     python manage.py migrate
 
 5. Crear un superusuario (recomendado):
-    python manage.py createsuperuser
+
+   ```bash
+   python manage.py createsuperuser
 
 6. Ejecutar el servidor:
+
+   ```bash
     python manage.py runserver
 
 7. Acceder desde el navegador:
+
+   ```bash
     Página principal: http://127.0.0.1:8000/
 	Panel de administración: http://127.0.0.1:8000/admin/
 
