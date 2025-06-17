@@ -46,39 +46,39 @@
    source env/bin/activate        # En Windows: env\Scripts\activate
 
 3. Instalar las dependencias necesarias:
-pip install django
+    pip install django
 
 4. Aplicar las migraciones iniciales:
-python manage.py migrate
+    python manage.py migrate
 
 5. Crear un superusuario (recomendado):
-python manage.py createsuperuser
+    python manage.py createsuperuser
 
 6. Ejecutar el servidor:
-python manage.py runserver
+    python manage.py runserver
 
 7. Acceder desde el navegador:
-	•	Página principal: http://127.0.0.1:8000/
-	•	Panel de administración: http://127.0.0.1:8000/admin/
+    Página principal: http://127.0.0.1:8000/
+	Panel de administración: http://127.0.0.1:8000/admin/
 
 ## Estructura de carpetas
 
-roadtripfoodies/
-├── core/
-│   ├── models.py
-│   ├── views.py
-│   ├── forms.py
-│   ├── templates/
-│   │   └── core/
-│   │       ├── base.html
-│   │       ├── home.html
-│   │       ├── receta_form.html
-│   │       ├── autor_form.html
-│   │       ├── destino_form.html
-│   │       ├── receta_detalle.html
-│   │       ├── autor_detalle.html
-│   │       └── destino_detalle.html
-├── roadtripfoodies/
-│   └── settings.py
-├── db.sqlite3
-├── manage.py
+    roadtripfoodies/
+    ├── core/
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── forms.py
+    │   ├── templates/
+    │   │   └── core/
+    │   │       ├── base.html
+    │   │       ├── home.html
+    │   │       ├── receta_form.html
+    │   │       ├── autor_form.html
+    │   │       ├── destino_form.html
+    │   │       ├── receta_detalle.html
+    │   │       ├── autor_detalle.html
+    │   │       └── destino_detalle.html
+    ├── roadtripfoodies/
+    │   └── settings.py
+    ├── db.sqlite3
+    ├── manage.py
