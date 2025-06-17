@@ -1,15 +1,17 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-    <div class="card p-4 shadow-sm">
-        <h2>{{ receta.titulo }}</h2>
-        <p><strong>Autor:</strong> {{ receta.autor.nombre }}</p>
-        <p><strong>Destino:</strong> {{ receta.destino.nombre }}</p>
-        <p><strong>Descripción:</strong> {{ receta.descripcion }}</p>
-        <p><strong>Ingredientes:</strong></p>
-        <pre>{{ receta.ingredientes }}</pre>
-        <p><strong>Pasos:</strong></p>
-        <pre>{{ receta.pasos }}</pre>
-        <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Volver</a>
+    <div class="card shadow-sm p-4">
+        <h2 class="mb-3">{{ receta.titulo }}</h2>
+        <p><strong>Destino:</strong> <a href="{% url 'detalle_destino' receta.destino.id %}">{{ receta.destino.nombre }}</a></p>
+        <p><strong>Autor:</strong> <a href="{% url 'detalle_autor' receta.autor.id %}">{{ receta.autor.nombre }}</a></p>
+        <hr>
+        <h5>Descripción</h5>
+        <p>{{ receta.descripcion }}</p>
+        <h5>Ingredientes</h5>
+        <pre class="bg-light p-3">{{ receta.ingredientes }}</pre>
+        <h5>Pasos</h5>
+        <pre class="bg-light p-3">{{ receta.pasos }}</pre>
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary mt-4">← Volver al inicio</a>
     </div>
 {% endblock %}
