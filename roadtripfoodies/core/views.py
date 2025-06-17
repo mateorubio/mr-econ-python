@@ -43,3 +43,7 @@ def nuevo_destino(request):
     else:
         form = DestinoForm()
     return render(request, 'core/destino_form.html', {'form': form})
+
+def detalle_receta(request, receta_id):
+    receta = Receta.objects.get(id=receta_id)
+    return render(request, 'core/receta_detalle.html', {'receta': receta})
