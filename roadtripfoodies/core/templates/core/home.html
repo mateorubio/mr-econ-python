@@ -19,7 +19,6 @@
             <p>{{ receta.descripcion|truncatewords:20 }}</p>
             <p><strong>Ingredientes:</strong> {{ receta.ingredientes|truncatewords:10 }}</p>
             <p><strong>Pasos:</strong> {{ receta.pasos|truncatewords:10 }}</p>
-            <p><small>Publicado el {{ receta.fecha_publicacion|date:"d M Y" }}</small></p>
         </li>
     {% empty %}
         <li>No hay recetas aún.</li>
