@@ -1,9 +1,10 @@
-def nueva_autor(request):
-    if request.method == 'POST':
-        form = AutorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = AutorForm()
-    return render(request, 'core/autor_form.html', {'form': form})
+{% extends "core/base.html" %}
+
+{% block content %}
+    <h2>Nuevo Autor</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}
